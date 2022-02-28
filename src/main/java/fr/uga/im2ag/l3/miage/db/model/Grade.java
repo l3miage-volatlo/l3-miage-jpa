@@ -3,14 +3,15 @@ package fr.uga.im2ag.l3.miage.db.model;
 import javax.persistence.*;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
-//@Entity
+@Entity
 public class Grade {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     //@OneToOne
     private Subject subject;
+    @Column(name="grade_value",nullable = false,updatable=false, insertable=false)
     private Float value;
     private Float weight;
 
