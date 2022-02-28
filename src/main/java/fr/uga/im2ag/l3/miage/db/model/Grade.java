@@ -9,7 +9,7 @@ public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //@OneToOne
+    @OneToOne
     private Subject subject;
     @Column(name="grade_value",nullable = false,updatable=false, insertable=false)
     private Float value;
