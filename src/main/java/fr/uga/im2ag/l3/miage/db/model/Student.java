@@ -1,18 +1,15 @@
 package fr.uga.im2ag.l3.miage.db.model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
 @Entity
 public class Student extends Person {
 
-    @OneToOne
+    @ManyToOne
     private GraduationClass belongTo;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Grade> grades;
 
     public GraduationClass getBelongTo() {
