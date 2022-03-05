@@ -5,6 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 class GraduationClassTest extends Base {
 
     GraduationClassRepository classRepository;
@@ -23,13 +26,27 @@ class GraduationClassTest extends Base {
 
     @Test
     void shouldSaveClass() {
-        // TODO
+        final var graduationClass = Fixtures.createClass();
+        entityManager.getTransaction().begin();
+        classRepository.save(graduationClass);
+        entityManager.getTransaction().commit();
+
+        final var savedClass = classRepository.findById(graduationClass.getId());
+        assertNotNull(savedClass);
+        assertEquals(graduationClass.getName(), savedClass.getName());
     }
 
 
     @Test
     void shouldFindByYearAndName() {
-        // TODO
+        final var graduationClass = Fixtures.createClass();
+        entityManager.getTransaction().begin();
+        classRepository.save(graduationClass);
+        entityManager.getTransaction().commit();
+
+        final var foundClass = classRepository.findByYearAndName(graduationClass.getYear(), graduationClass.getName());
+        assertNotNull(foundClass);
+        assertEquals(graduationClass.getName(), foundClass.getName());
     }
 
 }
