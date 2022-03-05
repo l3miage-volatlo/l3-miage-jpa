@@ -5,9 +5,7 @@ import java.util.Date;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
 @Entity
-@NamedQuery(name=Subject.FIND_ALL, query="SELECT p FROM Subject p")
 public class Subject {
-    public static final String FIND_ALL = "Subject.findAll";
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

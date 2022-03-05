@@ -5,10 +5,8 @@ import java.util.List;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
 @Entity
-@NamedQuery(name=Teacher.FIND_TEACHERS_BY_SUBJECT, query="SELECT p FROM Teacher p WHERE p.teaching.id = :subjectId")
 public class Teacher extends Person {
 
-    public static final String FIND_TEACHERS_BY_SUBJECT = "Teacher.findTeachersBySubject";
     @ManyToOne
     private Subject teaching;
     @OneToMany
