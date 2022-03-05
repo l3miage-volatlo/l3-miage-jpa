@@ -80,7 +80,7 @@ Le but est de :
 Une fois votre mapping fait vous passez à l'implémentation des Repository (aussi connu sous le nom de DAO)
 
 Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser les chances de succès :
-* - [ ] SubjectRepositoryImpl + Test
+* - [X] SubjectRepositoryImpl + Test
 * - [ ] GradeRepositoryImpl + Test
 * - [ ] GraduationClassRepositoryImpl + Test
 * - [ ] PersonRepositoryImpl + Test
