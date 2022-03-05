@@ -7,14 +7,16 @@ import java.util.List;
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
 @Entity
 @Table(uniqueConstraints={
-        @UniqueConstraint(columnNames = {"name", "year"})
+        @UniqueConstraint(columnNames = {"name", "GraduationClass_year"})
 })
 public class GraduationClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(name="GraduationClass_year",nullable = false)
     private Integer year;
     @OneToMany
     private List<Student> students;
