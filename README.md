@@ -49,30 +49,30 @@ Voici le modèle de données.
 
 Le but est de :
 
-1. Mapper les classes sur la base, grâce aux annotations JPA. Vous devrez respecter toutes les contraintes décrites du modèle (il pourrait y en avoir d'autre mais il y bien assez à faire).
-1. Coder puis tester les Repository avec JUnit grâce une base de données en mémoire (H2). Vous n'avez acune configuration à faire pour la base de données, tout fonctionne sans installation supplémentaire. En revanche vous ne pourrez pas visualiser vos données (à moins de les afficher dans la console).
+1. - [X] Mapper les classes sur la base, grâce aux annotations JPA. Vous devrez respecter toutes les contraintes décrites du modèle (il pourrait y en avoir d'autre mais il y bien assez à faire).
+2. - [ ] Coder puis tester les Repository avec JUnit grâce une base de données en mémoire (H2). Vous n'avez acune configuration à faire pour la base de données, tout fonctionne sans installation supplémentaire. En revanche vous ne pourrez pas visualiser vos données (à moins de les afficher dans la console).
 
 **Partout ou il a y un methode à implémenter il y a un TODO** 
 
 ### le mapping
-1. Cloner ou télécharger ce projet : `git clone https://github.com/bordigoni/l3-miage-jpa.git`
+1. - [X] Cloner ou télécharger ce projet : `git clone https://github.com/bordigoni/l3-miage-jpa.git`
     * Pour ceux sont à l'aise avec github et ont un compte, vous pouvez forker et me donner accès à votre repository pour le rendu. Vous devrez alors mettre votre nom dans le README
-2. Dans un terminal, à la racine projet, lancez la commande `mvn clean install -DskipTests`
-3. Importer le projet dans Eclipse "Import Maven Project"
-4. Prenez le temps de regarder les classes et le test existant pour comprendre comment faire l'implémentation. Toutes les méthodes à implémenter sont présentes mais vides.
-5. Annoter les classes pour faire le mapping
+2. - [X] Dans un terminal, à la racine projet, lancez la commande `mvn clean install -DskipTests`
+3. - [X] Importer le projet dans ~~Eclipse "Import Maven Project"~~ Intellij IDEA
+4. - [X] Prenez le temps de regarder les classes et le test existant pour comprendre comment faire l'implémentation. Toutes les méthodes à implémenter sont présentes mais vides.
+5. - [X] Annoter les classes pour faire le mapping
     * Les classes sont déjà déclarées dans `persistence.xml`
     * Vous être libre dans le choix de la stratégie pour mapper les héritages.
     * Conseil : commentez les relations si besoin et les ajouter de nouveau une à une en les annotant avec `@OneToMany`, `@ManyToOne` etc. afin qu'elles deviennent persistantes.
 
       Faites le mapping dans l'ordre suivant (dépendences inverse)
-        * Subject
-        * Grade
-        * GraduationClass (vous pouvez commenter la relation vers students dans un premier temps)
-        * Person
-        * Student
-        * Teacher
-6. Exécuter `SubjectTest` (partiellement codé), le test devrait passer si le mapping fonctionne.
+        * [X] Subject
+        * [X] Grade
+        * [X] GraduationClass (vous pouvez commenter la relation vers students dans un premier temps)
+        * [X] Person
+        * [X] Student
+        * [X] Teacher
+6. - [X] Exécuter `SubjectTest` (partiellement codé), le test devrait passer si le mapping fonctionne.
 
    ⚠️ certaines erreurs dans le mapping ne feront pas nécessairement planter votre test, vérifier les logs, il ne doit plus y avoir d'erreur.
 
@@ -80,12 +80,12 @@ Le but est de :
 Une fois votre mapping fait vous passez à l'implémentation des Repository (aussi connu sous le nom de DAO)
 
 Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser les chances de succès :
-* SubjectRepositoryImpl + Test
-* GradeRepositoryImpl + Test
-* GraduationClassRepositoryImpl + Test
-* PersonRepositoryImpl + Test
-* StudentRepositoryImpl + Test
-* TeacherRepositoryImpl + Test
+* [ ] SubjectRepositoryImpl + Test
+* [ ] GradeRepositoryImpl + Test
+* [ ] GraduationClassRepositoryImpl + Test
+* [ ] PersonRepositoryImpl + Test
+* [ ] StudentRepositoryImpl + Test
+* [ ] TeacherRepositoryImpl + Test
 
 1. Implémeter un repository
 * Implementer une classe `*RepositoryImpl`
