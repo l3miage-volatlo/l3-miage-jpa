@@ -5,6 +5,7 @@ import fr.uga.im2ag.l3.miage.db.model.Subject;
 import fr.uga.im2ag.l3.miage.db.model.Teacher;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.Collection;
 import java.util.List;
 
@@ -32,13 +33,14 @@ public class SubjectRepositoryImpl extends BaseRepositoryImpl implements Subject
 
     @Override
     public List<Subject> getAll() {
-        // TODO
-        return entityManager.createQuery("SELECT s FROM Subject s").getResultList();
+        TypedQuery<Subject> query = entityManager.createNamedQuery(Subject.FIND_ALL,Subject.class);
+        return query.getResultList();
     }
 
     @Override
     public Collection<Teacher> findTeachers(Long id) {
-        // TODO
-        return null;
+        TypedQuery<Teacher> query = entityManager.createNamedQuery(Teacher.FIND_TEACHERS_BY_SUBJECT,Teacher.class);
+        query.setParameter("subjectId",id);
+        return query.getResultList();
     }
 }
