@@ -4,14 +4,16 @@ import javax.persistence.*;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
 @Entity
+@NamedQuery(name = Grade.FIND_ALL, query = "SELECT g FROM Grade g")
 public class Grade {
+    public static final String FIND_ALL = "Grade.findAll";
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
     private Subject subject;
-    @Column(name="grade_value",nullable = false,updatable=false, insertable=false)
+    @Column(name="grade_value",nullable = false, updatable = false)
     private Float value;
     private Float weight;
 
