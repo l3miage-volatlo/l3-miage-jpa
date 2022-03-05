@@ -1,5 +1,7 @@
 package fr.uga.im2ag.l3.miage.db.model;
 
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,7 +9,7 @@ import java.util.List;
 @Entity
 public class Student extends Person {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private GraduationClass belongTo;
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<Grade> grades;
