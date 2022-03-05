@@ -66,12 +66,12 @@ Le but est de :
     * Conseil : commentez les relations si besoin et les ajouter de nouveau une à une en les annotant avec `@OneToMany`, `@ManyToOne` etc. afin qu'elles deviennent persistantes.
 
       Faites le mapping dans l'ordre suivant (dépendences inverse)
-        * [X] Subject
-        * [X] Grade
-        * [X] GraduationClass (vous pouvez commenter la relation vers students dans un premier temps)
-        * [X] Person
-        * [X] Student
-        * [X] Teacher
+        * - [X] Subject
+        * - [X] Grade
+        * - [X] GraduationClass (vous pouvez commenter la relation vers students dans un premier temps)
+        * - [X] Person
+        * - [X] Student
+        * - [X] Teacher
 6. - [X] Exécuter `SubjectTest` (partiellement codé), le test devrait passer si le mapping fonctionne.
 
    ⚠️ certaines erreurs dans le mapping ne feront pas nécessairement planter votre test, vérifier les logs, il ne doit plus y avoir d'erreur.
@@ -80,12 +80,12 @@ Le but est de :
 Une fois votre mapping fait vous passez à l'implémentation des Repository (aussi connu sous le nom de DAO)
 
 Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser les chances de succès :
-* [ ] SubjectRepositoryImpl + Test
-* [ ] GradeRepositoryImpl + Test
-* [ ] GraduationClassRepositoryImpl + Test
-* [ ] PersonRepositoryImpl + Test
-* [ ] StudentRepositoryImpl + Test
-* [ ] TeacherRepositoryImpl + Test
+* - [ ] SubjectRepositoryImpl + Test
+* - [ ] GradeRepositoryImpl + Test
+* - [ ] GraduationClassRepositoryImpl + Test
+* - [ ] PersonRepositoryImpl + Test
+* - [ ] StudentRepositoryImpl + Test
+* - [ ] TeacherRepositoryImpl + Test
 
 1. Implémeter un repository
 * Implementer une classe `*RepositoryImpl`
