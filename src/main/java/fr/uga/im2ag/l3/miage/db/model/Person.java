@@ -1,15 +1,12 @@
 package fr.uga.im2ag.l3.miage.db.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
-
-//@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Entity
 public abstract class Person {
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Gender gender;
     private String firstName;

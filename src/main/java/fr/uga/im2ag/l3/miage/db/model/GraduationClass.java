@@ -5,15 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO ajouter une named query pour une des requêtes à faire dans le repository
-//@Entity
+@Entity
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"name", "year"})
+})
 public class GraduationClass {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private Integer year;
-    //@OneToMany
+    @OneToMany
     private List<Student> students;
 
     public Long getId() {
