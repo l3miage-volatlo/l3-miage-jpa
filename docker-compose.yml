@@ -1,0 +1,14 @@
+database:
+  image: mariadb:10.6
+  ports:
+    - 4306:3306
+  command: --init-file /data/application/init.sql
+  volumes:
+    - ./init.sql:/data/application/init.sql
+  restart: always
+  environment:
+    MARIADB_ROOT_USER: root
+    MARIADB_ROOT_PASSWORD: secret
+    MARIADB_DATABASE: ave
+    MARIADB_USER: root
+    MARIADB_PASSWORD: secret
