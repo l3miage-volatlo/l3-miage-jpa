@@ -83,7 +83,7 @@ Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser
 * - [X] SubjectRepositoryImpl + Test
 * - [X] GradeRepositoryImpl + Test **⚠ Mise à jour de la note encore Possible**
 * - [X] GraduationClassRepositoryImpl + Test
-* - [ ] PersonRepositoryImpl + Test
+* - [ ] PersonRepositoryImpl + Test // N'existe pas je ne le fais pas pour le moment
 * - [ ] StudentRepositoryImpl + Test
 * - [ ] TeacherRepositoryImpl + Test
 
