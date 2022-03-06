@@ -9,8 +9,10 @@ import java.util.List;
 @Entity
 public class Student extends Person {
 
+    //Permet de ne pas avoir à save la class avant de save la person
     @ManyToOne(cascade = CascadeType.PERSIST)
     private GraduationClass belongTo;
+    //Permet de ne pas avoir à save les notes avant de save la person
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<Grade> grades;
 

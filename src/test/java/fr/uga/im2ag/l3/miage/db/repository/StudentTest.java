@@ -80,19 +80,6 @@ class StudentTest extends Base {
 
         entityManager.getTransaction().begin();
         subjectRepository.save(subject);
-        gradeRepository.save(grade1);
-        gradeRepository.save(grade2);
-        gradeRepository.save(grade3);
-        gradeRepository.save(grade4);
-        gradeRepository.save(grade5);
-        gradeRepository.save(grade6);
-        gradeRepository.save(grade7);
-        gradeRepository.save(grade8);
-        gradeRepository.save(grade9);
-        gradeRepository.save(grade10);
-        gradeRepository.save(grade11);
-        gradeRepository.save(grade12);
-        graduationClassRepository.save(graduationClass);
         studentRepository.save(student1);
         studentRepository.save(student2);
         studentRepository.save(student3);
