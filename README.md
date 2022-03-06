@@ -1,4 +1,7 @@
 # TP JPA
+* Julien TURC (turc is tant)
+* Louis VOLAT (et il sent volat)
+* Lucas ZAETTA (ta π zaetta rivé)
 
 Vous avez deux scéance de TP pour en venir à bout, vous être libre de continuer chez vous.
 
