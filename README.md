@@ -84,7 +84,7 @@ Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser
 * - [ ] GradeRepositoryImpl + Test **⚠ Mise à jour de la note encore Possible**
 * - [X] GraduationClassRepositoryImpl + Test
 * - [ ] PersonRepositoryImpl + Test *N'existe pas dans le projet donc pas fait*
-* - [ ] StudentRepositoryImpl + Test **⚠ Crash sur la recherche des notes**
+* - [X] StudentRepositoryImpl + Test
 * - [X] TeacherRepositoryImpl + Test
 
 1. Implémeter un repository
