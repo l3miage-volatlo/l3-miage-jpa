@@ -31,6 +31,8 @@ class GraduationClassTest extends Base {
         classRepository.save(graduationClass);
         entityManager.getTransaction().commit();
 
+        entityManager.detach(graduationClass);
+
         final var savedClass = classRepository.findById(graduationClass.getId());
         assertNotNull(savedClass);
         assertEquals(graduationClass.getName(), savedClass.getName());
@@ -43,6 +45,8 @@ class GraduationClassTest extends Base {
         entityManager.getTransaction().begin();
         classRepository.save(graduationClass);
         entityManager.getTransaction().commit();
+
+        entityManager.detach(graduationClass);
 
         final var foundClass = classRepository.findByYearAndName(graduationClass.getYear(), graduationClass.getName());
         assertNotNull(foundClass);

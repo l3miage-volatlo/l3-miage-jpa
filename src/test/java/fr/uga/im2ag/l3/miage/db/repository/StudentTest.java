@@ -33,7 +33,7 @@ class StudentTest extends Base {
     @AfterEach
     void after() {
         if (entityManager.getTransaction().isActive()) {
-            //entityManager.getTransaction().rollback();
+            entityManager.getTransaction().rollback();
         }
     }
 
@@ -45,8 +45,9 @@ class StudentTest extends Base {
         studentRepository.save(student);
         entityManager.getTransaction().commit();
 
-        var pStudent = studentRepository.findById(student.getId());
+        entityManager.detach(student);
 
+        var pStudent = studentRepository.findById(student.getId());
         assertThat(pStudent).isNotNull();
         assertThat(pStudent.getFirstName()).isEqualTo(student.getFirstName());
     }
@@ -98,14 +99,32 @@ class StudentTest extends Base {
         studentRepository.save(student4);
         entityManager.getTransaction().commit();
 
+        entityManager.detach(subject);
+        entityManager.detach(grade1);
+        entityManager.detach(grade2);
+        entityManager.detach(grade3);
+        entityManager.detach(grade4);
+        entityManager.detach(grade5);
+        entityManager.detach(grade6);
+        entityManager.detach(grade7);
+        entityManager.detach(grade8);
+        entityManager.detach(grade9);
+        entityManager.detach(grade10);
+        entityManager.detach(grade11);
+        entityManager.detach(grade12);
+        entityManager.detach(graduationClass);
+        entityManager.detach(student1);
+        entityManager.detach(student2);
+        entityManager.detach(student3);
+        entityManager.detach(student4);
 
         float minAvg = 8.0f;
         final var students = studentRepository.findStudentHavingGradeAverageAbove(minAvg);
         assertThat(students).isNotNull();
         for (var student : students) {
-            final var avg = student.getGrades().stream().reduce(0f,
-                    (acc, curentGrade) -> acc + curentGrade.getValue() * curentGrade.getWeight(),Float::sum)
-                    / student.getGrades().stream().mapToDouble((value -> value.getWeight())).sum();
+            final var avg = student.getGrades().stream()
+                    .reduce(0f,(acc, curentGrade) -> acc + curentGrade.getValue() * curentGrade.getWeight(),Float::sum)
+                    / student.getGrades().stream().mapToDouble((Grade::getWeight)).sum();
             assertThat(avg).isGreaterThanOrEqualTo(minAvg);
         }
     }

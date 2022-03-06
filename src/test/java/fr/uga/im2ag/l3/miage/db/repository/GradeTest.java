@@ -61,7 +61,9 @@ class GradeTest extends Base {
         gradeRepository.save(grade);
         entityManager.flush();
         entityManager.getTransaction().commit();
-        entityManager.clear();
+
+        entityManager.detach(subject);
+        entityManager.detach(grade);
 
         final var pGrade = gradeRepository.findById(grade.getId());
         pGrade.setValue(18.75f);
@@ -69,7 +71,8 @@ class GradeTest extends Base {
         gradeRepository.save(pGrade);
         entityManager.flush();
         entityManager.getTransaction().commit();
-        entityManager.clear();
+
+        entityManager.detach(pGrade);
 
         final var pGrade2 = gradeRepository.findById(grade.getId());
         assertThat(pGrade2.getValue()).isEqualTo(8.75f);
@@ -96,6 +99,12 @@ class GradeTest extends Base {
         gradeRepository.save(grade3);
         gradeRepository.save(grade4);
         entityManager.getTransaction().commit();
+
+        entityManager.detach(subject);
+        entityManager.detach(grade1);
+        entityManager.detach(grade2);
+        entityManager.detach(grade3);
+        entityManager.detach(grade4);
 
         final var highestGrades = gradeRepository.findHighestGrades(3);
         assertThat(highestGrades).hasSize(3);
@@ -126,6 +135,13 @@ class GradeTest extends Base {
         gradeRepository.save(grade3);
         gradeRepository.save(grade4);
         entityManager.getTransaction().commit();
+
+        entityManager.detach(subject1);
+        entityManager.detach(subject2);
+        entityManager.detach(grade1);
+        entityManager.detach(grade2);
+        entityManager.detach(grade3);
+        entityManager.detach(grade4);
 
         final var highestGrades = gradeRepository.findHighestGradesBySubject(3, subject1);
         assertThat(highestGrades).hasSize(2);
