@@ -53,7 +53,7 @@ Voici le modèle de données.
 Le but est de :
 
 1. - [X] Mapper les classes sur la base, grâce aux annotations JPA. Vous devrez respecter toutes les contraintes décrites du modèle (il pourrait y en avoir d'autre mais il y bien assez à faire).
-2. - [ ] Coder puis tester les Repository avec JUnit grâce une base de données en mémoire (H2). Vous n'avez acune configuration à faire pour la base de données, tout fonctionne sans installation supplémentaire. En revanche vous ne pourrez pas visualiser vos données (à moins de les afficher dans la console).
+2. - [X] Coder puis tester les Repository avec JUnit grâce une base de données en mémoire (H2). Vous n'avez acune configuration à faire pour la base de données, tout fonctionne sans installation supplémentaire. En revanche vous ne pourrez pas visualiser vos données (à moins de les afficher dans la console).
 
 **Partout ou il a y un methode à implémenter il y a un TODO** 
 
