@@ -85,7 +85,7 @@ Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser
 * - [X] GraduationClassRepositoryImpl + Test
 * - [ ] PersonRepositoryImpl + Test // N'existe pas je ne le fais pas pour le moment
 * - [ ] StudentRepositoryImpl + Test
-* - [ ] TeacherRepositoryImpl + Test
+* - [X] TeacherRepositoryImpl + Test
 
 1. Implémeter un repository
 * Implementer une classe `*RepositoryImpl`
