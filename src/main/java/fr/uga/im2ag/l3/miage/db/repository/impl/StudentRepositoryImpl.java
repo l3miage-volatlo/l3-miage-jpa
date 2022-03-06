@@ -43,8 +43,8 @@ public class StudentRepositoryImpl extends BaseRepositoryImpl implements Student
 
     @Override
     public List<Student> findStudentHavingGradeAverageAbove(float minAverage) {
-        return entityManager.createQuery("SELECT s from Student s join Grade g having sum(g.value*g.weight)/sum(g.weight)>:avg", Student.class)
-                .setParameter("avg", minAverage)
+        return entityManager.createQuery("SELECT s from Student s join s.grades as g group by s having (sum(g.value*g.weight)/sum(g.weight))>:avg", Student.class)
+                .setParameter("avg", (double)minAverage)
                 .getResultList();
     }
 }

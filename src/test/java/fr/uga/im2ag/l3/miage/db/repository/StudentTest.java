@@ -66,8 +66,6 @@ class StudentTest extends Base {
         final var grade10 = Fixtures.createGrade(subject);
         final var grade11 = Fixtures.createGrade(subject);
         final var grade12 = Fixtures.createGrade(subject);
-        final var grades = List.of(grade1, grade2, grade3, grade4, grade5, grade6, grade7, grade8, grade9, grade10, grade11, grade12);
-
 
         final var graduationClass = Fixtures.createClass();
         final var student1 = Fixtures.createStudent(graduationClass);
