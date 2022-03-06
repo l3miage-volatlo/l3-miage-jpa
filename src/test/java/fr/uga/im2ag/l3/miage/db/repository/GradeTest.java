@@ -61,6 +61,7 @@ class GradeTest extends Base {
         gradeRepository.save(grade);
         entityManager.flush();
         entityManager.getTransaction().commit();
+        entityManager.clear();
 
         final var pGrade = gradeRepository.findById(grade.getId());
         pGrade.setValue(18.75f);
@@ -68,6 +69,7 @@ class GradeTest extends Base {
         gradeRepository.save(pGrade);
         entityManager.flush();
         entityManager.getTransaction().commit();
+        entityManager.clear();
 
         final var pGrade2 = gradeRepository.findById(grade.getId());
         assertThat(pGrade2.getValue()).isEqualTo(8.75f);

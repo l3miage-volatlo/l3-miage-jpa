@@ -81,7 +81,7 @@ Une fois votre mapping fait vous passez à l'implémentation des Repository (aus
 
 Voici l'ordre dans lequel l'implémentation doit être réalisée pour optimiser les chances de succès :
 * - [X] SubjectRepositoryImpl + Test
-* - [ ] GradeRepositoryImpl + Test **⚠ Mise à jour de la note encore Possible**
+* - [X] GradeRepositoryImpl + Test
 * - [X] GraduationClassRepositoryImpl + Test
 * - [ ] PersonRepositoryImpl + Test *N'existe pas dans le projet donc pas fait*
 * - [X] StudentRepositoryImpl + Test
